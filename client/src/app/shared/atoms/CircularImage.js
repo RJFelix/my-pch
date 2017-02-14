@@ -15,7 +15,6 @@ import React from "react";
 */
 
 export default function CircularImage(props) {
-  const linkTarget = props.href;
   return (
     <div
       style={{
@@ -23,13 +22,11 @@ export default function CircularImage(props) {
         position: "relative",
         width: props.size + "px",
         height: props.size + "px",
-        overflow: hidden,
+        overflow: "hidden",
         borderRadius: "50%"
       }}
     >
-      {linkTarget &&
-        <a href={props.href}>
-      }
+      <a href={props.href}>
           <img 
             src={props.src}
             alt={props.alt}
@@ -38,10 +35,7 @@ export default function CircularImage(props) {
               height: "100%",
               marginLeft: (props.size / 4) + "px"
             }} />
-            
-      {linkTarget &&
         </a>
-      }
     </div>
   );
 }

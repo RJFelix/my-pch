@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import initializeStore from "./shared/initializeStore";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
+import initializeStore from "./app/shared/initializeStore";
+import { Provider, Router, Route, IndexRoute, browserHistory } from "react-router";
 import "../semantic/dist/semantic.min.css";
 
 let store = initializeStore();

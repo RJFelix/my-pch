@@ -84,7 +84,7 @@ export class MapPanel extends React.Component {
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { moveMap, selectItem } from "./ducks/itemVisibility";
+import { moveMap, selectItem } from "../ducks/itemVisibility";
 
 /*
 * MapContainer: container that handles the Redux side of things
@@ -112,4 +112,4 @@ const mapDispatchToProps = function(dispatch) {
 
 const MapContainer = connect(mapStateToProps, mapDispatchToProps)(MapPanel);
 
-export default MapPanel;
+export default MapContainer;

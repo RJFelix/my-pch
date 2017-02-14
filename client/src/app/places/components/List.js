@@ -24,7 +24,7 @@ export function ListDisplay(props) {
 
 const mapStateToProps = function(state) {
   return {
-    items: state.items.filter(items => items.visible);
+    items: state.items.filter(items => items.visible)
   }
 }
 

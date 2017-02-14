@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PlacesIndex from "./places/index";
+import PlacesIndex from "./app/places/";
 
 class App extends Component {
   render() {

@@ -86,6 +86,9 @@ function reduceItemSelection(items = [], action) {
     case actions.CLEAR_SELECTED_ITEM: {
       return items.map(item => ({ ...item, selected: false }));
     }
+    default: {
+      return items;
+    }
   }
 }
 
@@ -100,10 +103,15 @@ function reduceTagSelection(tags = {}, action) {
     }
     case actions.SELECT_ALL_TAGS: {
       let newTags = {};
-      for(tag in tags) {
-        newTags[tag] = true;
+      for(let tag in tags) {
+        if(tags.hasOwnProperty(tag)) {
+          newTags[tag] = true;
+        }        
       }
       return newTags;
+    }
+    default: {
+      return tags;
     }
   }
 }
