@@ -14,16 +14,20 @@ import React from "react";
 *    size: diameter of image, in px
 */
 
+//         position: "relative",
 export default function CircularImage(props) {
   return (
     <div
       style={{
         display: "inline-block",
-        position: "relative",
+        boxShadow: "0px 0px 24px -5px rgba(82,82,82,1)",
+        WebkitBoxShadow: "0px 0px 24px -5px rgba(82,82,82,1)",
+        mozBoxShadow: "0px 0px 24px -5px rgba(82,82,82,1)",
         width: props.size + "px",
         height: props.size + "px",
         overflow: "hidden",
-        borderRadius: "50%"
+        borderRadius: "50%",
+        margin: "0 auto"
       }}
     >
       <a href={props.href}>
@@ -33,9 +37,10 @@ export default function CircularImage(props) {
             style={{
               width: "auto",
               height: "100%",
-              marginLeft: (props.size / 4) + "px"
             }} />
         </a>
     </div>
   );
 }
+
+//  marginLeft: (props.size / 4) + "px"

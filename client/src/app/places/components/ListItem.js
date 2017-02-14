@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router";
-// import CircularImage from "../../shared/atoms/CircularImage";
+import CircularImage from "../../shared/atoms/CircularImage";
 
 /*
 *  CONTENTS:
@@ -32,9 +32,13 @@ function truncate(text, length) {
 export default function ListItem(props) {
   return(
     <div className={(props.selected ? "active" : "") + "item"}>
-      <div className="image">
-        <img src={props.image} alt="Beautiful scenery" />
-      </div>
+      
+        <CircularImage
+          src={props.image}
+          alt="Beautiful scenery"
+          size={100}
+        />
+
       <div className="content">
         <h3 className="header">
           {props.itemName}
