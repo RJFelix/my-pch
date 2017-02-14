@@ -125,8 +125,8 @@ function isVisible(item, bounds, tags) {
   // check to see if the item's tag is active
   
   let foundTag = false;
-  for(let i = 0; i < item.tags.length; i++) {
-    if(tags.getOwnPropertyNames().some(t => t === item.tags[i])) {
+  for(let tag in tags) {
+    if(item.tags.some(t => t === tag)) {
       foundTag = true;
       break;
     }
@@ -135,6 +135,7 @@ function isVisible(item, bounds, tags) {
     return false;
   }
   // check to see if the item is located within bounds
+  console.log("" + bounds.west + bounds.east + bounds.south + bounds.north)
   return(
     (item.coords.lng > bounds.west) &&
     (item.coords.lng < bounds.east) &&
