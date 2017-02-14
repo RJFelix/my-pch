@@ -62,10 +62,10 @@ const initialState = {
     mapZoom: 6,
     activeTag: "camping",
     tags: {
-        "camping": true,
-        "surfing": false,
-        "hiking": false,
-        "nature": false
+        camping: true,
+        surfing: false,
+        hiking: false,
+        nature: false
     }
 };
 

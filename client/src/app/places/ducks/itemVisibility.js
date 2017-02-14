@@ -124,16 +124,16 @@ function reduceTagSelection(tags = {}, action) {
 function isVisible(item, bounds, tags) {
   // check to see if the item's tag is active
   
-  // let foundTag = false;
-  // for(let i = 0; i < item.tags.length; i++) {
-  //   if(tags.getOwnPropertyNames().some(t => t === item.tags[i])) {
-  //     foundTag = true;
-  //     break;
-  //   }
-  // }
-  // if(!foundTag) {
-  //   return false;
-  // }
+  let foundTag = false;
+  for(let i = 0; i < item.tags.length; i++) {
+    if(tags.getOwnPropertyNames().some(t => t === item.tags[i])) {
+      foundTag = true;
+      break;
+    }
+  }
+  if(!foundTag) {
+    return false;
+  }
   // check to see if the item is located within bounds
   return(
     (item.coords.lng > bounds.west) &&

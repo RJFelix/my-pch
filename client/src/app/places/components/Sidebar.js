@@ -10,6 +10,9 @@ import { Link } from "react-router";
 *     activeTag - which tag is active
 *     onClick - bound function to dispatch the newly selected tag
 */
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function SidebarDisplay(props) {
   return(
@@ -20,7 +23,9 @@ function SidebarDisplay(props) {
           className={(tag === props.activeTag ? "active" : "") + "item"}
           onClick={props.onClick(tag)}
           key={idx}
-        />
+        >
+          {capitalize(tag)}
+        </Link>
       )}
     </div>
   );
@@ -29,11 +34,12 @@ function SidebarDisplay(props) {
 // populate the sidebar's tagList with all tags that exist
 const mapStateToProps = function(state) {
   let tagList = [];
-  state.tags.forEach(function(tag) {
+  for(let tag in state.tags) {
     if(!tagList.includes(tag)) {
       tagList.push(tag);
     }
-  });
+  }
+  
   return { tagList: tagList, activeTag: state.activeTag };
 }
 
