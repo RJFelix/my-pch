@@ -16,7 +16,7 @@ export function SidebarDisplay(props) {
     <div className="ui vertical pointing menu">
       {this.props.tagList.map((tag, idx) =>
         <Link 
-          to={"/places/" + tag} 
+          to={"#"} //"/places/ + tag"
           className={(tag === this.props.activeTag ? "active" : "") + "item"}
           onClick={this.props.onClick(tag)}
           key={idx}
