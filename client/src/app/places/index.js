@@ -8,7 +8,7 @@ export default function PlacesIndex(props) {
   return( 
     <div className="ui grid">
       <div className="two wide column">
-        <Sidebar initialTag={this.props.initialTag} />
+        <Sidebar initialTag={props.initialTag} />
       </div>
       <div className="seven wide column">
         <List />

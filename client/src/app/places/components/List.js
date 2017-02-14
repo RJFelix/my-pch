@@ -6,10 +6,10 @@ import ListItem from "./ListItem";
 * List and its container
 */
 
-export function ListDisplay(props) {
+function ListDisplay(props) {
   return(
     <div className="ui divided items">
-      {this.props.items.map(item =>
+      {props.items.map(item =>
         <ListItem 
           key={item.id} 
           itemName={item.itemName}

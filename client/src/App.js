@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-import PlacesIndex from "./app/places/";
+import PlacesIndex from "./app/places/index";
 
 class App extends Component {
   render() {

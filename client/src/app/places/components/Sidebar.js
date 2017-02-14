@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { toggleTag, clearSelectedItem } from "../ducks/itemVisibility.js";
 import { Link } from "react-router";
@@ -11,14 +11,14 @@ import { Link } from "react-router";
 *     onClick - bound function to dispatch the newly selected tag
 */
 
-export function SidebarDisplay(props) {
+function SidebarDisplay(props) {
   return(
     <div className="ui vertical pointing menu">
-      {this.props.tagList.map((tag, idx) =>
+      {props.tagList.map((tag, idx) =>
         <Link 
           to={"#"} //"/places/ + tag"
-          className={(tag === this.props.activeTag ? "active" : "") + "item"}
-          onClick={this.props.onClick(tag)}
+          className={(tag === props.activeTag ? "active" : "") + "item"}
+          onClick={props.onClick(tag)}
           key={idx}
         />
       )}
@@ -29,12 +29,10 @@ export function SidebarDisplay(props) {
 // populate the sidebar's tagList with all tags that exist
 const mapStateToProps = function(state) {
   let tagList = [];
-  state.items.forEach(function(item) {
-    item.tags.forEach(function(tag) {
-      if(!tagList.includes(tag)) {
-        tagList.push(tag);
-      }
-    });
+  state.tags.forEach(function(tag) {
+    if(!tagList.includes(tag)) {
+      tagList.push(tag);
+    }
   });
   return { tagList: tagList, activeTag: state.activeTag };
 }

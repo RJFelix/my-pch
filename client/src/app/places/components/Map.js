@@ -1,5 +1,8 @@
 import React from "react";
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { moveMap, selectItem } from "../ducks/itemVisibility";
 
 /*
 * CONTENTS:
@@ -15,8 +18,9 @@ import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 * Map: the actual Google map
 * react-google-maps' withGoogleMap() does the nitty gritty setup work for us
 */
-export const Map = withGoogleMap(props => (
+const Map = withGoogleMap(props => (
   <GoogleMap
+    ref={props.onMapMounted}
     defaultZoom={6}
     defaultCenter={{ lat: 42.224, lng: -121.278 }}
     onBoundsChanged={props.onBoundsChanged}
@@ -82,9 +86,7 @@ export class MapPanel extends React.Component {
   }
 }
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { moveMap, selectItem } from "../ducks/itemVisibility";
+
 
 /*
 * MapContainer: container that handles the Redux side of things

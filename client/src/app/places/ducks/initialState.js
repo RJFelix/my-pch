@@ -12,7 +12,7 @@ const initialState = {
             itemName: "Happy Camp",
             image: "http://lorempixel.com/300/300/sports/",
             description: "Of course he's a happy little stone, cause we don't have any other kind. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. You need the dark in order to show the light. Nature is so fantastic, enjoy it. Let it make you happy.",
-            tags: ["camping", "nature", "off-road"],
+            tags: ["camping", "nature"],
             coords: // google.maps.LatLngLiteral
             {
                 lat: 46.0623,
@@ -60,7 +60,13 @@ const initialState = {
         west: -127.914
     },
     mapZoom: 6,
-    activeTag: "camping"
+    activeTag: "camping",
+    tags: {
+        "camping": true,
+        "surfing": false,
+        "hiking": false,
+        "nature": false
+    }
 };
 
 export default initialState;
