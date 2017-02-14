@@ -134,8 +134,8 @@ function isVisible(item, bounds, tags) {
   if(!foundTag) {
     return false;
   }
+  return true;
   // check to see if the item is located within bounds
-  console.log("" + bounds.west + bounds.east + bounds.south + bounds.north)
   return(
     (item.coords.lng > bounds.west) &&
     (item.coords.lng < bounds.east) &&
