@@ -32,13 +32,17 @@ function truncate(text, length) {
 export default function ListItem(props) {
   return(
     <div className={(props.selected ? "active" : "") + "item"}>
-      
+      <div 
+        style={{
+          display: "inline-block",
+          marginRight: "18px"
+        }} >
         <CircularImage
           src={props.image}
           alt="Beautiful scenery"
           size={100}
         />
-
+      </div>
       <div className="content">
         <h3 className="header">
           {props.itemName}
