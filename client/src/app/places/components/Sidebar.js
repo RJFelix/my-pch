@@ -54,6 +54,21 @@ function SidebarDisplay(props) {
           key={idx}
         />
       )}
+      <TagDisplay
+        href="#"
+        selected={props.tagStatus.reduce((accum, it) => accum && it)}
+        text="All Locations"
+        onClick={
+          () => function() {
+            console.log('select all');
+            for(let i = 0; i < props.tagList.length; i++) {
+              if(!props.tagStatus[i]) {
+                props.onClick(props.tagList[i])();
+              }
+            }
+          }
+        }
+        />
     </div>
   );
 }
@@ -77,7 +92,7 @@ const mapStateToProps = function(state) {
 // (clearing the selected item is to avoid weirdness but should be fixed)
 const mapDispatchToProps = function(dispatch) {
   return {
-    onClick: (tag) => () => { dispatch(clearSelectedItem()); dispatch(toggleTag(tag)); }
+    onClick: (tag) => () => { console.log("clicked "+ tag); dispatch(clearSelectedItem()); dispatch(toggleTag(tag)); }
   };
 }
 
