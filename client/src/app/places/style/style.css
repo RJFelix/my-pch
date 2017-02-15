@@ -1,0 +1,13 @@
+.map-container {
+  height: 92vh;
+}
+
+.ui.divided.items {
+  height: 92vh;
+  overflow: scroll;
+}
+
+.ui.vertical.pointing.menu {
+  width: 100%;
+  text-align: center;
+}

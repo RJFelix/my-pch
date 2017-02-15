@@ -2,6 +2,7 @@ import React from "react";
 import List from "./components/List";
 import MapComponent from "./components/Map";
 import Sidebar from "./components/Sidebar";
+import "./style/style.css";
 
 // Index component for the Places view
 export default function PlacesIndex(props) {
