@@ -60,7 +60,6 @@ const initialState = {
         west: -127.914
     },
     mapZoom: 6,
-    activeTag: "camping",
     tags: {
         camping: true,
         surfing: false,

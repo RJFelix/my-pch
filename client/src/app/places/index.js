@@ -1,6 +1,6 @@
 import React from "react";
 import List from "./components/List";
-import Map from "./components/Map";
+import MapComponent from "./components/Map";
 import Sidebar from "./components/Sidebar";
 
 // Index component for the Places view
@@ -14,7 +14,7 @@ export default function PlacesIndex(props) {
         <List />
       </div>
       <div className="seven wide column">
-        <Map />
+        <MapComponent />
       </div>
     </div>
   );
