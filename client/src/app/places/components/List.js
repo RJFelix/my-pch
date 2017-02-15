@@ -9,6 +9,10 @@ import ListItem from "./ListItem";
 function ListDisplay(props) {
   return(
     <div className="ui divided items">
+      <div className="item"
+           style={{
+             height: "0",
+           }} />
       {props.items.map(item =>
         <ListItem 
           key={item.id} 
@@ -18,7 +22,12 @@ function ListDisplay(props) {
           tags={item.tags}
           selected={item.selected} />
           )}
-      </div>
+      <div className="item"
+        style={{
+          height: "0",
+        }} />
+    </div>
+      
   );
 }
 

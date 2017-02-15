@@ -4,8 +4,12 @@
 
 .ui.divided.items {
   padding-top: 2vh;
-  height: 92vh;
+  height: 91vh;
   overflow: scroll;
+}
+
+.ui.divided.items .item .content {
+  padding-right: 5px;
 }
 
 .ui.vertical.pointing.menu {

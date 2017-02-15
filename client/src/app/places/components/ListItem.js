@@ -35,7 +35,8 @@ export default function ListItem(props) {
       <div 
         style={{
           display: "inline-block",
-          marginRight: "18px"
+          marginRight: "18px",
+          marginLeft: "10px"
         }} >
         <CircularImage
           src={props.image}

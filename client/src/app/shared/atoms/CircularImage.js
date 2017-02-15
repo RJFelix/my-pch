@@ -20,9 +20,9 @@ export default function CircularImage(props) {
     <div
       style={{
         display: "inline-block",
-        boxShadow: "0px 0px 28px -5px rgba(128,128,128,1)",
-        WebkitBoxShadow: "0px 0px 28px -5px rgba(128,128,128,1)",
-        MozBoxShadow: "0px 0px 28px -5px rgba(128,128,128,1)",
+        boxShadow: "0px 0px 8px 0px rgba(128,128,128,0.5)",
+        WebkitBoxShadow: "0px 0px 8px 0px rgba(128,128,128,0.5)",
+        MozBoxShadow: "0px 0px 8px 0px rgba(128,128,128,0.5)",
         width: props.size + "px",
         height: props.size + "px",
         overflow: "hidden",
