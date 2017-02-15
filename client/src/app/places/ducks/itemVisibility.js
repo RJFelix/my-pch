@@ -125,14 +125,14 @@ function reduceTagSelection(tags = {}, action) {
 //   tags: tags object, where { tag: Boolean } is tag active status
 function isVisible(item, bounds, tags) {
   // check to see if the item's tag is active
-  
   let foundTag = false;
   for(let tag in tags) {
-    if(item.tags.some(t => t === tag)) {
+    if(tags[tag] && item.tags.includes(tag)) {
       foundTag = true;
       break;
     }
   }
+
   if(!foundTag) {
     return false;
   }
