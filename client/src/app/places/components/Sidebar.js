@@ -14,18 +14,40 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+/* TagDisplay - a single tag list item
+*    props - 
+*    selected: Boolean - is this item selected?
+*    onClick: a function accepting no arguments
+*      (curry it before passing it in!)
+*    text: text to display
+*    href: link destination
+*/
+function TagDisplay(props) {
+  return(
+    <Link
+      to={props.href}
+      className={"item" + (props.selected ? " active" : "")}
+      onClick={props.onClick()}
+      >
+      {/*<div className={"ui checkbox" + (props.selected ? " set checked" : "")}>
+        <input type="checkbox" />
+      </div>*/}
+      {props.text}
+    </Link>
+  );
+}
+
 function SidebarDisplay(props) {
   return(
     <div className="ui vertical pointing menu">
       {props.tagList.map((tag, idx) =>
-        <Link 
-          to={"#"} //"/places/ + tag"
-          className={(props.tagStatus[idx] ? "active" : "") + "item"}
-          onClick={props.onClick(tag)}
+        <TagDisplay
+          href="#"
+          selected={props.tagStatus[idx]}
+          text={capitalize(tag)}
+          onClick={() => props.onClick(tag)}
           key={idx}
-        >
-          {capitalize(tag)}
-        </Link>
+        />
       )}
     </div>
   );

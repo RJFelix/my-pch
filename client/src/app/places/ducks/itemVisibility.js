@@ -99,7 +99,9 @@ function reduceItemSelection(items = [], action) {
 function reduceTagSelection(tags = {}, action) {
   switch (action.type) {
     case actions.TOGGLE_TAG: {
-      return Object.assign({}, tags, { [action.tag]: !tags.tag });
+
+      return Object.assign({}, tags, { [action.tag]: !tags[action.tag] });
+
     }
     case actions.SELECT_ALL_TAGS: {
       let newTags = {};
