@@ -10,15 +10,15 @@ import { moveMap, selectItem } from "../ducks/itemVisibility";
 *   MapContainer: redux container for the Google map
 *   [other]
 *   MapPanel: display container for the Google map, passes down props
-*   Map: the Google map component itself
+*   MapDisplay: the Google map component itself
 */
 
 
 /*
-* Map: the actual Google map
+* MapDisplay: the actual Google map
 * react-google-maps' withGoogleMap() does the nitty gritty setup work for us
 */
-const Map = withGoogleMap(props => (
+const MapDisplay = withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapMounted}
     defaultZoom={6}
@@ -60,6 +60,7 @@ export class MapPanel extends React.Component {
   onMarkerClick(id) {
     this.selectItem(id);
   }
+  onMarkerClick = this.onMarkerClick.bind(this);
 
   // props contains bound dispatch functions
   componentDidMount() {
@@ -70,12 +71,14 @@ export class MapPanel extends React.Component {
   render() {
     // pass through props to the child element
     return (
-      <Map
+      <MapDisplay
         containerElement={
-          <div className="map-container" />
+          <div className="map-container" 
+               style={{ height: "100%" }} />
         }
         mapElement={
-          <div className="map-element" />
+          <div className="map-element"
+               style={{ height: "100%" }} />
         }
         markers={this.props.markers}
         onBoundsChanged={this.onBoundsChanged}
@@ -112,6 +115,6 @@ const mapDispatchToProps = function(dispatch) {
   return bindActionCreators({ moveMap, selectItem }, dispatch);
 }
 
-const MapContainer = connect(mapStateToProps, mapDispatchToProps)(MapPanel);
+const MapComponent = connect(mapStateToProps, mapDispatchToProps)(MapPanel);
 
-export default MapContainer;
+export default MapComponent;

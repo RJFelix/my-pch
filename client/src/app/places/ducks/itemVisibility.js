@@ -134,6 +134,7 @@ function isVisible(item, bounds, tags) {
   if(!foundTag) {
     return false;
   }
+  // TEMP TESTING
   return true;
   // check to see if the item is located within bounds
   return(
