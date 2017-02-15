@@ -31,7 +31,7 @@ function truncate(text, length) {
 */
 export default function ListItem(props) {
   return(
-    <div className={(props.selected ? "active" : "") + "item"}>
+    <div className={(props.selected ? "active " : "") + "item"}>
       <div 
         style={{
           display: "inline-block",

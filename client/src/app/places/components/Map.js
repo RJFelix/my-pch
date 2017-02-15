@@ -31,7 +31,8 @@ const MapDisplay = withGoogleMap(props => (
         position={marker.position} 
         label={marker.label} 
         title={marker.title} 
-        onclick={() => props.onMarkerClick(marker.id)}
+        onClick={() => props.onMarkerClick(marker.id)}
+        defaultAnimation={2}
       />)}
     </GoogleMap>
 ));
@@ -106,7 +107,8 @@ const mapStateToProps = function(state) {
                           position: item.coords,
                           label: labels[idx],
                           title: item.itemName,
-                          id: item.id
+                          id: item.id,
+                          selected: item.selected
                         }))
   };
 }

@@ -3,6 +3,7 @@
 }
 
 .ui.divided.items {
+  padding-top: 2vh;
   height: 92vh;
   overflow: scroll;
 }
@@ -10,4 +11,11 @@
 .ui.vertical.pointing.menu {
   width: 100%;
   text-align: center;
+}
+
+.ui.divided.items .active.item {
+  background-color: #fffddd;
+  -webkit-box-shadow: 0px 0px 15px -1px rgba(138,138,138,1);
+  -moz-box-shadow: 0px 0px 15px -1px rgba(138,138,138,1);
+  box-shadow: 0px 0px 15px -1px rgba(138,138,138,1);
 }
