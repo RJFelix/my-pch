@@ -39,7 +39,12 @@ function TagDisplay(props) {
 
 function SidebarDisplay(props) {
   return(
-    <div className="ui vertical pointing menu">
+    <div className="ui vertical pointing menu"
+         style={{
+           borderTopLeftRadius: 0,
+           borderTopRightRadius: 0
+         }}
+    >
       {props.tagList.map((tag, idx) =>
         <TagDisplay
           href="#"

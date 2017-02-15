@@ -21,7 +21,7 @@ import { moveMap, selectItem } from "../ducks/itemVisibility";
 const MapDisplay = withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapMounted}
-    defaultZoom={6}
+    defaultZoom={5}
     defaultCenter={{ lat: 42.224, lng: -121.278 }}
     onBoundsChanged={props.onBoundsChanged}
   >
@@ -101,9 +101,11 @@ const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 // construct an array of the currently visible place markers
 const mapStateToProps = function(state) {
+  let sortedItems = state.items.slice()
+                               .filter(item => item.visible)
+                               .sort((a,b) => b.coords.lat - a.coords.lat);
   return {
-    markers: state.items.filter(item => item.visible)
-                        .map((item, idx) => ({
+    markers: sortedItems.map((item, idx) => ({
                           position: item.coords,
                           label: labels[idx],
                           title: item.itemName,

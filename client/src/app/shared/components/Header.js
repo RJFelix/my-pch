@@ -4,7 +4,12 @@ import { Link } from "react-router";
 export default function Header(props) {
   return(
     <div className="header">
-      <header className="ui inverted menu">
+      <header className="ui inverted menu"
+              style={{ 
+                borderBottomLeftRadius: 0,
+                borderBottomRightRadius: 0
+              }}
+              >
         <div className="header item">
           <Link to="/">
             MyPCH
