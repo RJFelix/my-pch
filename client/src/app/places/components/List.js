@@ -23,8 +23,10 @@ function ListDisplay(props) {
 }
 
 const mapStateToProps = function(state) {
+  let sortedItems = state.items.slice().filter(item => item.visible);
+  sortedItems.sort((a,b) => b.coords.lat - a.coords.lat)
   return {
-    items: state.items.filter(items => items.visible)
+    items: sortedItems
   }
 }
 
