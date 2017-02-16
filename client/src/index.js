@@ -16,7 +16,7 @@ let store = initializeStore();
 */
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router>
       <Route path="/" component={App}>
         <IndexRoute />
       </Route>
