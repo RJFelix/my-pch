@@ -96,6 +96,36 @@ const initialState = {
             visible: true,
             selected: false
 
+        },
+        { 
+            id: 6,
+            itemName: "Huboldt Redwoods State Park",
+            image: "http://i.imgur.com/QynKHOc.jpg",
+            description: "Work that paint. The man who does the best job is the one who is happy at his job. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it.",
+            tags: ["nature", "hiking"],
+            coords: // google.maps.LatLngLiteral
+            {
+                lat: 40.3219,
+                lng: -123.9105
+            },
+            visible: true,
+            selected: false
+
+        },
+        { 
+            id: 7,
+            itemName: "Santa Cruz",
+            image: "http://i.imgur.com/VbIdQTL.jpg",
+            description: "Work that paint. The man who does the best job is the one who is happy at his job. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it.",
+            tags: ["culture", "nightlife", "surfing"],
+            coords: // google.maps.LatLngLiteral
+            {
+                lat: 36.9564,
+                lng: -121.9773
+            },
+            visible: true,
+            selected: false
+
         }
     ],
     mapBounds: {
