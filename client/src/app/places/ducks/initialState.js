@@ -42,7 +42,7 @@ const initialState = {
             itemName: "Astoria",
             image: "http://i.imgur.com/L4H99Rh.jpg",
             description: "Work that paint. The man who does the best job is the one who is happy at his job. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it.",
-            tags: ["camping", "surfing"],
+            tags: ["culture"],
             coords: // google.maps.LatLngLiteral
             {
                 lat: 46.1806,
@@ -126,6 +126,21 @@ const initialState = {
             visible: true,
             selected: false
 
+        },
+        { 
+            id: 7,
+            itemName: "Piedras Blancas Elephant Seal Rookery",
+            image: "http://i.imgur.com/opgMrq0.jpg",
+            description: "Work that paint. The man who does the best job is the one who is happy at his job. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it.",
+            tags: ["nature"],
+            coords: // google.maps.LatLngLiteral
+            {
+                lat: 35.6618,
+                lng: -121.2582
+            },
+            visible: true,
+            selected: false
+
         }
     ],
     mapBounds: {
@@ -141,7 +156,9 @@ const initialState = {
         hiking: false,
         nature: false,
         golfing: false,
-        boating: false
+        boating: false,
+        culture: false,
+        nightlife: false
     }
 };
 
