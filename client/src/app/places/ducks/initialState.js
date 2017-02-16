@@ -129,7 +129,7 @@ const initialState = {
         },
         { 
             id: 8,
-            itemName: "Piedras Blancas Elephant Seal Rookery",
+            itemName: "Piedras Blancas Elephant Seal Rookery - Super Cool!",
             image: "http://i.imgur.com/opgMrq0.jpg",
             description: "Work that paint. The man who does the best job is the one who is happy at his job. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it.",
             tags: ["nature"],
