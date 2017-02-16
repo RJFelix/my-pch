@@ -13,6 +13,14 @@ function ListDisplay(props) {
            style={{
              height: "0",
            }} />
+      { (props.items.length > 0) || 
+        (<div className="item">
+          <div className="content">
+            <div className="header">
+              Select a tag to view awesome destinations!
+            </div>
+          </div>
+        </div>) }
       {props.items.map(item =>
         <ListItem 
           key={item.id} 
